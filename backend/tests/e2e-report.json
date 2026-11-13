@@ -1,0 +1,253 @@
+{
+  "testResults": [
+    {
+      "name": "Open Home Page",
+      "status": "PASS",
+      "detail": "Brand: \"NotesHub\", Hero Title: \"Centralized Academic Notes & Learning Portal\"",
+      "apiData": null,
+      "dbData": null
+    },
+    {
+      "name": "Fetch and Display Subjects from MongoDB",
+      "status": "PASS",
+      "detail": "UI rendered 5 subjects matching MongoDB records.",
+      "apiData": {
+        "subjectsCount": 5
+      },
+      "dbData": {
+        "dbSubjectsCount": 5
+      }
+    },
+    {
+      "name": "Select a Subject & Filter Notes",
+      "status": "PASS",
+      "detail": "Filtered by CS301. Active Filter Chip: \"Subject: CS301\n×\", Displayed: 2 note(s)",
+      "apiData": null,
+      "dbData": null
+    },
+    {
+      "name": "Search Notes by Title & Keywords",
+      "status": "PASS",
+      "detail": "Search query \"Regression\" returned 1 note: \"Linear & Logistic Regression Complete Notes\"",
+      "apiData": null,
+      "dbData": null
+    },
+    {
+      "name": "Form Validation - Missing Required Fields",
+      "status": "PASS",
+      "detail": "HTML5 required validation prevented submission of empty form.",
+      "apiData": null,
+      "dbData": null
+    },
+    {
+      "name": "Reject Invalid Non-PDF File Format",
+      "status": "PASS",
+      "detail": "Alert message: \"Upload Error\n\nInvalid file format. Please upload a PDF file (.pdf) only.\n\n×\"",
+      "apiData": null,
+      "dbData": null
+    },
+    {
+      "name": "Reject Oversized File (>10 MB)",
+      "status": "PASS",
+      "detail": "Alert message: \"Upload Error\n\nFile is too large (11.00 MB). Maximum allowed size is 10 MB.\n\n×\"",
+      "apiData": null,
+      "dbData": null
+    },
+    {
+      "name": "Upload Valid PDF Note",
+      "status": "PASS",
+      "detail": "Success box: \"Note Published Successfully!\"",
+      "apiData": null,
+      "dbData": null
+    },
+    {
+      "name": "Verify Note in UI and MongoDB",
+      "status": "PASS",
+      "detail": "UI: Found \"Deep Learning & Neural Network Architectures (E2E Verified)\" by Dr. Alistair Ross. MongoDB: ID 6af6e959cf5c4c18ae14d4b4, Subject: CS302",
+      "apiData": {
+        "uiNoteFound": {
+          "title": "Deep Learning & Neural Network Architectures (E2E Verified)",
+          "subject": "Machine Learning",
+          "faculty": "Dr. Alistair Ross"
+        }
+      },
+      "dbData": {
+        "dbNoteId": "6af6e959cf5c4c18ae14d4b4",
+        "dbNoteFile": "Deep-Learning-Notes-Lab.pdf",
+        "dbFileSize": 752
+      }
+    },
+    {
+      "name": "Open PDF in Interactive Viewer Modal",
+      "status": "PASS",
+      "detail": "Modal title: \"Deep Learning & Neural Network Architectures (E2E Verified)\", Iframe URL: \"http://localhost:5173/api/notes/6af6e959cf5c4c18ae14d4b4/file\"",
+      "apiData": null,
+      "dbData": null
+    },
+    {
+      "name": "Download Uploaded PDF & Increment Downloads Counter",
+      "status": "PASS",
+      "detail": "HTTP 200, Content-Type: application/pdf, Bytes: 752, MongoDB downloadsCount: 1",
+      "apiData": null,
+      "dbData": null
+    },
+    {
+      "name": "Update Note Details (Faculty Edit)",
+      "status": "PASS",
+      "detail": "MongoDB verified updated title: \"Deep Learning & Neural Network Architectures (Revision 2026 Updated)\"",
+      "apiData": null,
+      "dbData": null
+    },
+    {
+      "name": "Delete Note & Purge PDF from GridFS Storage",
+      "status": "PASS",
+      "detail": "MongoDB record deleted: true. GridFS file purged: true",
+      "apiData": null,
+      "dbData": null
+    }
+  ],
+  "apiCalls": [
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes",
+      "status": 304
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/subjects",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/subjects",
+      "status": 304
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes?subject=6af6d64670624cbfaaa3a1a9",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes",
+      "status": 304
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes?search=R",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes?search=Re",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes?search=Reg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes?search=Regr",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes?search=Regre",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes?search=Regres",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes?search=Regress",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes?search=Regressi",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes?search=Regressio",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes?search=Regression",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes",
+      "status": 304
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:5173/api/notes",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/subjects",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes/6af6e959cf5c4c18ae14d4b4/file",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes/6af6e959cf5c4c18ae14d4b4/file",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "url": "http://localhost:5173/api/notes/6af6e959cf5c4c18ae14d4b4",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/subjects",
+      "status": 304
+    },
+    {
+      "method": "DELETE",
+      "url": "http://localhost:5173/api/notes/6af6e959cf5c4c18ae14d4b4",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/notes",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:5173/api/subjects",
+      "status": 200
+    }
+  ],
+  "consoleErrors": [],
+  "networkErrors": []
+}

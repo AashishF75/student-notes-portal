@@ -1,0 +1,26 @@
+{
+  "name": "student-notes-sharing-portal",
+  "version": "1.0.0",
+  "description": "Full-Stack Student Notes Sharing Portal for Faculty and Students",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "seed": "cd backend && npm run seed",
+    "test:backend": "cd backend && npm test",
+    "start:backend": "cd backend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "mern",
+    "react",
+    "express",
+    "mongodb",
+    "notes-portal",
+    "multer",
+    "pdf"
+  ],
+  "author": "College Portal Engineering Team",
+  "license": "ISC"
+}
+
